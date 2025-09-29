@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" href="../images/hamburger.png">
+    <title>Formulario</title>
+</head>
+<body>
+    
+<div id="burger-rain" class="burger-rain"></div>
+
+<!-- ========================================================================================================= cabeçalho 
+=============================================================================== -->
+<header>
+    <nav>
+
+    <div class="logo">
+        <img src="/images/logo-real.png" alt="">
+    </div>
+
+    <div class="link">
+        <a href="./index.html">Home</a>
+        <a href="#combos">Combos</a>
+        <a href="#promocao">Promoção</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#local">Localização</a>
+        <a href="#footer">Contato</a>
+    </div>
+    </nav>
+</header>
+
+
+<!-- ============================================================= FORM ============================================================================== -->
+<section id="formulario" class="formulario">
+  
+  <div class="titl">
+    <h2>Bem-vindo ao nosso cadastro!
+Faça seu cadastro e realize seu pedido.
+</h2>
+<br>
+
+<p>📍 Lembramos que este pedido é para retirada em nosso local.
+Se deseja receber em casa, clique aqui para acessar a página de delivery.
+<br>
+👉 Esta página é exclusiva para clientes que já estão em nosso espaço ou que irão retirar o pedido pessoalmente.</p>
+  </div>
+
+  <form id="formula">
+    <legend>Dados Pessoais</legend>
+    <label for="">
+      Nome:
+      <input type="text" id="nome" required>
+    </label>
+
+    <label for="">
+      Email:
+      <input type="email" id="email" required placeholder="exempl@gmail.com">
+    </label>
+
+    <label for="">
+      Telefone:
+      <input type="tel" id="text" required placeholder="">
+    </label>
+
+    <legend>Detalhes do Pedido</legend>
+
+    <label for="">
+      Pedido:
+      <input type="tel" id="text" required placeholder="Combo Leve">
+    </label>
+
+    <label for="">
+      Observações:
+      <input type="tel" id="text" required placeholder="sem maionese">
+    </label>
+
+    <label for="">
+      Quantidade:
+      <input type="tel" id="text" required placeholder="">
+    </label>
+
+    <legend>Forma de Pagamento</legend>
+<select name="pagamento" id="selecao" required>
+    <option value="">Selecione</option>
+    <option value="dinheiro">Dinheiro</option>
+    <option value="credito">Cartão de Crédito</option>
+    <option value="pix">Pix</option>
+</select>
+
+<legend>Encomenda</legend>
+    <label for="">
+      Data da Encomenda:
+      <input type="date" id="text" required placeholder="">
+    </label> 
+    <label for="">
+        Hora da Encomenda: 
+        <input type="time" required>
+    </label>
+    <label for="">
+        Descrição da Encomenda:
+        <input type="text" required placeholder="Lanches Especiais,  Brigadeiros de oreo e Refrigerantes">
+    </label>
+
+    <label for="">
+        Quatidade:
+        <input type="text" placeholder="50 lanches Especiais, 3 brigadeiros de oreo e 4 Refrigerantes" required >
+    </label>
+
+    <button type="submit" id="botao">Enviar</button>
+  </form>
+</section>
+
+  <footer>
+    <p>Dúvidas |</p>
+    <p>@Direitos reservados.</p>
+    <p>@Direitos reservados.</p>
+    <p>@Direitos reservados.</p>
+
+    <p>Encomenda</p>
+
+
+
+
+<script>
+    const rainContainer = document.getElementById('burger-rain');
+    const form = document.getElementById("formula");
+    const foodEmojis = ['🍔','🍟','🌭','🍕','🥤','🍩','🧁','🍫'];
+
+    function startRain() {
+      for (let i = 0; i < 25; i++) {
+        const item = document.createElement('div');
+        item.classList.add('burger-item');
+        item.textContent = foodEmojis[Math.floor(Math.random() * foodEmojis.length)];
+        item.style.left = Math.random() * 100 + 'vw';
+        item.style.fontSize = Math.random() * 30 + 25 + 'px';
+        const duration = Math.random() * 3 + 3;
+        item.style.animation = `fall ${duration}s linear forwards`;
+        rainContainer.appendChild(item);
+        setTimeout(() => item.remove(), duration * 1000);
+      }
+    }
+
+    // Intercepta o envio do formulário
+    form.addEventListener("submit", function(e) {
+        e.preventDefault(); // impede recarregar a página
+
+        startRain(); // dispara os emojis 🎉
+
+        // opcional: exibe mensagem ou envia os dados via JS/AJAX
+        // alert("Pedido enviado com sucesso!");
+    });
+
+    form.addEventListener("submit", function(e) {
+    e.preventDefault(); // impede recarregar a página
+
+    startRain(); // dispara os emojis 🎉
+
+    const select = document.getElementById("selecao");
+    const valor = select.value;
+
+    let mensagem = "Pedido enviado com sucesso!\n";
+
+    if (valor === "dinheiro") {
+        mensagem += "Pagamento em dinheiro selecionado, vá até o caixa e realize o pagamento.";
+    } 
+    else if (valor === "credito") {
+        mensagem += "Pagamento em cartão de crédito selecionado, aguarde o atendente com a maquininha. Ou insira os dados do seu cartão no campo abaixo.";
+    } 
+    else if (valor === "pix") {
+        mensagem += "Pagamento via Pix selecionado, aguarde o QR Code para realizar o pagamento.";
+    } 
+    else {
+        mensagem += "Selecione uma forma de pagamento.";
+    }
+
+    alert(mensagem);
+});
+
+</script>
+
+
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+
+header{
+    background-color: black;
+}
+
+nav{
+background-color: #000000;
+height: 80px;
+display: flex;
+justify-content: space-between;
+/* padding: 0 10px; */
+ align-items: center;
+}
+
+nav a{
+color: white;
+font-size: 20px;
+text-decoration: none;
+margin-right: 40px;
+}
+
+.logo{
+  display: flex;
+  align-items: center; /* centraliza a imagem verticalmente */
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+
+/* ========================================= formulario =============================================================================== */
+.formulario{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #070707;
+    padding: 40px 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 0 15px rgb(6, 20, 128);  
+    border: 2px solid rgb(6, 20, 128);    
+    border-radius: 12px;
+    background-color: #fff;
+    color: #000;
+    padding: 30px;
+    width: 80%;
+    max-width: 700px;
+    margin-bottom: 25px;
+}
+
+form label{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input, textarea{
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 14px;
+}
+
+textarea{
+    min-height: 80px;
+    resize: vertical;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: rgb(6, 20, 128);  
+    background-color: #f9f9f9;
+}
+
+#botao{
+    align-self: flex-end;
+    height: 40px;
+    width: 120px;
+    border-radius: 8px;
+    border: none;
+    background-color:rgb(6, 20, 128);  
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#botao:hover{
+    background-color: rgb(6, 20, 128);  
+}
+
+.titl{
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+
+footer {
+    background-color: rgb(6, 20, 128);  
+    width: 100%;                         
+    padding: 20px 0;                     
+    text-align: center;   
+                     color: #000;
+}
+
+
+/* animação + js - CHATGPETECO */
+
+.burger-rain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* não atrapalha cliques */
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.burger-item {
+  position: absolute;
+  top: -100px;
+  will-change: transform;
+  font-size: 40px; /* tamanho padrão, mas o JS muda */
+}
+
+@keyframes fall {
+  0%   { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { transform: translateY(120vh) rotate(360deg); opacity: 1; }
+}
