@@ -91,6 +91,11 @@ Se deseja receber em casa, clique aqui para acessar a página de delivery.
     <option value="pix">Pix</option>
 </select>
 
+    <button type="submit" id="botao">Enviar</button>
+  </form>
+
+
+<form action="" id="formEncomenda">
 <legend>Encomenda</legend>
     <label for="">
       Data da Encomenda:
@@ -107,11 +112,12 @@ Se deseja receber em casa, clique aqui para acessar a página de delivery.
 
     <label for="">
         Quatidade:
-        <input type="text" placeholder="50 lanches Especiais, 3 brigadeiros de oreo e 4 Refrigerantes" required >
+        <input type="text" required placeholder="50 lanches Especiais, 3 brigadeiros de oreo e 4 Refrigerantes" required >
     </label>
 
-    <button type="submit" id="botao">Enviar</button>
-  </form>
+  <button type="submit" onclick="encomenda()">Enviar</button>
+
+</form>  
 </section>
 
   <footer>
@@ -178,6 +184,14 @@ Se deseja receber em casa, clique aqui para acessar a página de delivery.
     }
 
     alert(mensagem);
+});
+
+
+document.getElementById("forEncomenda").addEventListener("submit", function(e) {
+  if(this.checkValidity()){
+    e.preventDefault();
+    alert("Recebemos sua encomenda! Em até 24 horas você receberá uma mensagem nossa. Caso não receba, entre em contato por\nE-mail: swallow.enomendas\nWhatsApp: (41) 888-9999")
+  }
 });
 
 </script>

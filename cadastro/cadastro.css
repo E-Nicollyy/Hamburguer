@@ -95,7 +95,7 @@ input:focus, textarea:focus {
     border-radius: 8px;
     border: none;
     background-color:rgb(6, 20, 128);  
-    color: #000;
+    color: #faf7f7;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
@@ -114,11 +114,11 @@ input:focus, textarea:focus {
 
 
 footer {
-    background-color: rgb(6, 20, 128);  
+    background-color: rgb(3, 3, 3);  
     width: 100%;                         
     padding: 20px 0;                     
     text-align: center;   
-                     color: #000;
+    color: #fffdfd;
 }
 
 

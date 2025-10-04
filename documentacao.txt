@@ -1,0 +1,14 @@
+
+document.getElementById("forEncomenda").addEventListener("submit", function(e) {
+  if(this.checkValidity()){
+    e.preventDefault();
+    alert("Recebemos sua encomenda! Em até 24 horas você receberá uma mensagem nossa. Caso não receba, entre em contato por\nE-mail: swallow.enomendas\nWhatsApp: (41) 888-9999")
+  }
+});
+é para quando eu for usar o onclick() ele não desrespeitar o meu requered do html. 
+
+
+e.preventDefault(); = impede o envio real do formulário
+
+
+Animação dos emojis - dominar melhor
