@@ -87,9 +87,12 @@ margin-right: 40px;
 }
 .combo1{
 margin: 20px;
-
 }
 
+.combo1:hover {
+    transform: translateY(-10px);
+    transition: 0.8s;
+}
 .combo-a{
   background-color: #000000;
   width: 350px;
@@ -334,4 +337,37 @@ text-decoration: none;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+/* ================================================== footer ============================================= */
+
+footer {
+  display: flex;
+  justify-content: center; /* centraliza os grupos */
+  align-items: center;
+  padding: 20px;
+  background-color: #000000;
+  color: white;
+  gap: 20px; /* espaçamento entre contatos | divisoria | redes */
+
+}
+
+.contatos, .redes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icones-contato, .icones-redes {
+  display: flex;
+  gap: 10px; /* espaço entre os ícones */
+  margin-top: 5px; 
+}
+
+.divisao {
+  font-size: 60px;
+  align-self: stretch; /* a barra ocupa altura do footer */
+  display: flex;
+  align-items: center;
+  color: white;
 }
